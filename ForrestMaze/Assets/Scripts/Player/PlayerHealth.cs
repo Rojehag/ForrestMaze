@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth;
-    int currentHealth;
+    public int currentHealth;
+    bool enemyTag;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +33,14 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            currentHealth -= 1;
+        }
     }
 
     void GameOver()
     {
-
+        SceneManager.LoadScene(2);
     }
 }
