@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = currentHealth;
 
     }
+
+    //So you can die
     void Update()
     {
         if (currentHealth <= 0)
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //For health bar
     public float remaningHealthProcentage
     {
         get
@@ -31,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //So you only take damage from enemys
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
