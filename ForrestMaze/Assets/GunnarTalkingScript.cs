@@ -10,6 +10,7 @@ public class GunnarTalkingScript : MonoBehaviour
     public string[] dialogue;
     private int index;
 
+    public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
 
@@ -34,6 +35,11 @@ public class GunnarTalkingScript : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
+
+        if(dialogueText.text == dialogue[index])
+        {
+            continueButton.SetActive(true);
+        }
     }
 
     public void zeroText()
@@ -41,6 +47,31 @@ public class GunnarTalkingScript : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+    }
+
+    IEnumerator Typing()
+    {
+        foreach(char letter in dialogue[index].ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+    }
+
+    public void NextLine()
+    {
+
+        continueButton.SetActive(false);  
+        if(index < dialogue.Length - 1)
+        {
+            index++;
+            dialogueText.text = "";
+            StartCoroutine(Typing());
+        }
+        else
+        {
+            zeroText();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,12 +82,5 @@ public class GunnarTalkingScript : MonoBehaviour
         }
     }
 
-    IEnumerator Typing()
-    {
-        foreach(char letter in dialogue[index].ToCharArray())
-        {
-            dialogueText += letter;
-            yield return new WaitForSeconds(wordSpeed);
-        }
-    }
+   
 }
