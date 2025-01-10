@@ -871,8 +871,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1565842613}
   dialogueText: {fileID: 148531236}
   dialogueLines:
-  - What are you doing alone in this forest kid?
-  - Young people like you should keep yourselfs to the city's
+  - What are you doing alone in this forest kid? Young People like you should stay
+    in the cities. This forest is big, hope you find your way out. Or else come back
+    and talk with me, it's boring in this forest.
   continueButton: {fileID: 2114400124}
 --- !u!61 &1980260028
 BoxCollider2D:
@@ -1070,9 +1071,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1980260027}
-        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_TargetAssemblyTypeName: TalkingNPC, Assembly-CSharp
+        m_MethodName: NextDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
