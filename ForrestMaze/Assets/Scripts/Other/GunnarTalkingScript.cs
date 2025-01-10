@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GunnarTalkingScript : MonoBehaviour
 {
     public GameObject dialoguePanel;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
 
@@ -23,7 +24,7 @@ public class GunnarTalkingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if(Input.GetKey(KeyCode.E) && playerIsClose)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -35,6 +36,7 @@ public class GunnarTalkingScript : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
+        
 
         if(dialogueText.text == dialogue[index])
         {
