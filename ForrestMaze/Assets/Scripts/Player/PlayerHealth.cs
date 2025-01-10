@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     bool enemyTag;
     bool armOut;
-    
+    Animator animator;
 
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         maxHealth = currentHealth;
 
+        animator = GetComponent<Animator>();
     }
 
     //So you can die
@@ -31,10 +32,13 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             armOut = true;
+            animator.SetFloat("Hit", 1f);
+            
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             armOut = false;
+            animator.SetFloat("Hit", 0f);
         }
     }
 
