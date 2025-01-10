@@ -535,7 +535,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dark Forest
+  m_text: 'Dark Forest
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a699ab1f271f3b24780922cb2cf147b7, type: 2}
   m_sharedMaterial: {fileID: -2361445967042107089, guid: a699ab1f271f3b24780922cb2cf147b7, type: 2}
