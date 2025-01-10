@@ -507,7 +507,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -847,8 +847,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a699ab1f271f3b24780922cb2cf147b7, type: 2}
-  m_sharedMaterial: {fileID: -2361445967042107089, guid: a699ab1f271f3b24780922cb2cf147b7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06ebfca864e8c334a9856aeb20a9407a, type: 2}
+  m_sharedMaterial: {fileID: -2361445967042107089, guid: 06ebfca864e8c334a9856aeb20a9407a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
