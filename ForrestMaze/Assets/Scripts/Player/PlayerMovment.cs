@@ -10,9 +10,13 @@ public class PlayerMovment : MonoBehaviour
     //To get the speed it will multiply with the vector later
     public int speed;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         //Getting the rigidbody
         rigidbody = GetComponent<Rigidbody2D>();
 
@@ -30,18 +34,30 @@ public class PlayerMovment : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rigidbody.velocity = new Vector2(0, 1) * speed;
+            rigidbody.rotation = 0;
+            animator.SetFloat("Run", speed);
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             rigidbody.velocity = new Vector2(0, -1) * speed;
+            rigidbody.rotation = 180;
+            animator.SetFloat("Run", speed);
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             rigidbody.velocity = new Vector2(-1, 0) * speed;
+            rigidbody.rotation = 90;
+            animator.SetFloat("Run", speed);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             rigidbody.velocity = new Vector2(1, 0) * speed;
+            rigidbody.rotation = -90;
+            animator.SetFloat("Run", speed);
+        }
+        else
+        {
+            animator.SetFloat("Run", 0f);
         }
     }
 }

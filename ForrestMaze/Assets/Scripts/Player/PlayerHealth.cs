@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     bool enemyTag;
+    bool armOut;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,16 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameOver();
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            armOut = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            armOut = false;
         }
     }
 
@@ -39,7 +52,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            currentHealth -= 1;
+            if (armOut == true)
+            {
+
+            }
+            else if(armOut == false)
+            {
+                currentHealth -= 1;
+            }
         }
     }
 
