@@ -31,14 +31,15 @@ public class PlayerHealth : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            armOut = true;
+            
             animator.SetFloat("Hit", 1f);
             
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            armOut = false;
+            
             animator.SetFloat("Hit", 0f);
+
         }
     }
 
@@ -56,14 +57,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (armOut == true)
-            {
-
-            }
-            else if(armOut == false)
-            {
-                currentHealth -= 1;
-            }
+            print("Hello");
+            currentHealth -= 1;
+            
         }
     }
 

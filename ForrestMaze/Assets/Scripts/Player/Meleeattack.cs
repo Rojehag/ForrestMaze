@@ -19,9 +19,10 @@ public class Meleeattack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject playerAttack = Instantiate(attackObject, transform.position + transform.up, Quaternion.Euler(0, 0, 0));
-            Rigidbody2D attackRigidbody = playerAttack.GetComponent<Rigidbody2D>();
+            Rigidbody2D playerRigidbody = playerAttack.GetComponent<Rigidbody2D>();
             Destroy(playerAttack, time);
         }
         
     }
 }
+ 
