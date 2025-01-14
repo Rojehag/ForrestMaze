@@ -20,9 +20,10 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+         
         GameObject enemyAttack = Instantiate(enemmyAttackArea, transform.position + transform.up, Quaternion.Euler(0, 0, 0));
         Rigidbody2D enemnyRigidbody = enemyAttack.GetComponent<Rigidbody2D>();
+        
         Destroy(enemyAttack, timeOfAttack);
     }
 }

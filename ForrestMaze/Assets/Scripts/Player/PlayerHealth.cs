@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     bool enemyTag;
     bool armOut;
 
-    Animator animator;
+    
 
     public GameObject lives;
 
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         maxHealth = currentHealth;
 
-        animator = GetComponent<Animator>();
+        
     }
 
     //So you can die
@@ -33,18 +33,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            
-            animator.SetFloat("Hit", 1f);
-            
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            
-            animator.SetFloat("Hit", 0f);
 
-        }
     }
 
     //For health bar
@@ -57,14 +46,16 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //So you only take damage from enemys
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnColliderEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        
+        
+        if (collider.gameObject.CompareTag("Enemy"))
         {
             
             currentHealth -= 1;
 
-            Destroy(lives.transform.GetChild(currentHealth).gameObject);
+           // Destroy(lives.transform.GetChild(currentHealth).gameObject);
 
         }
     }
