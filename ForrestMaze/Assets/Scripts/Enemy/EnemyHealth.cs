@@ -30,12 +30,14 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        print("Inne i collision");
-        if (collision.gameObject.CompareTag("PlayerAttack"))
+        
+        
+        
+        if (collider.gameObject.CompareTag("PlayerAttack"))
         {
-            print("inne i if");
+            
             currentHealth -= 1;
         }
     }
