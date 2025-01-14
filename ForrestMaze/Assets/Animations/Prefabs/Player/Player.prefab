@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4678ac86d8d0cd4d86e36abe418b701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 3
+  currentHealth: 3
 --- !u!95 &3284856099283526671
 Animator:
   serializedVersion: 5

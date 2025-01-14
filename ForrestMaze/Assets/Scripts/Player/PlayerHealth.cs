@@ -7,9 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
+
     bool enemyTag;
     bool armOut;
+
     Animator animator;
+
+    public GameObject lives;
 
 
     // Start is called before the first frame update
@@ -57,9 +61,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            print("Hello");
-            currentHealth -= 1;
             
+            currentHealth -= 1;
+
+            Destroy(lives.transform.GetChild(currentHealth).gameObject);
+
         }
     }
 
