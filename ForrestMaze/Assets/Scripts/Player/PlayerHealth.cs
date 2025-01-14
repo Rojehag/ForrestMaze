@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //So you only take damage from enemys
-    private void OnColliderEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
         
         

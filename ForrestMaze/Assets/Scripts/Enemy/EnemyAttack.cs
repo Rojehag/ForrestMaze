@@ -18,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
          
         GameObject enemyAttack = Instantiate(enemmyAttackArea, transform.position + transform.up, Quaternion.Euler(0, 0, 0));
