@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class björn : MonoBehaviour
+public class cannibal : MonoBehaviour
 {
     [SerializeField]
     private float _speed;

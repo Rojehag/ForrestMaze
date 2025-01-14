@@ -13,6 +13,7 @@ public class PlayerMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print("nu startar vi!");
         animator = GetComponent<Animator>();
 
         //Getting the rigidbody
@@ -27,10 +28,11 @@ public class PlayerMovment : MonoBehaviour
     {
         //To being able to stop
         rigidbody.velocity = new Vector2(0, 0);
-
         // Movment
+
         if (Input.GetKey(KeyCode.W))
         {
+            print("nu går vi frammåt!");
             rigidbody.velocity = new Vector2(0, 1) * speed;
             rigidbody.rotation = 0;
             animator.SetFloat("Run", speed);
