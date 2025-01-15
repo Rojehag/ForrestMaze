@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject enemy;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +33,9 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+
         
-        
-        
+
         if (collider.gameObject.CompareTag("PlayerAttack"))
         {
             
