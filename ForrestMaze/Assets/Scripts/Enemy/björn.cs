@@ -5,7 +5,11 @@ using UnityEngine;
 public class björn : MonoBehaviour
 {
     [SerializeField]
-    private float _speed;
+    private float _walkingSpeed;
+    [SerializeField]
+    private float _runingSpeed;
+
+    bool playerNearby = false;
 
     [SerializeField]
     private float _roatationSpeed;
@@ -15,11 +19,14 @@ public class björn : MonoBehaviour
     private Vector2 _targetDirection;
     private float _changeDirectionCooldown;
 
+    Animator animator;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _PlayerAwarnessController = GetComponent<PlayerAwarnessController>();
         _targetDirection = transform.up;
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -33,6 +40,8 @@ public class björn : MonoBehaviour
     {
         HandleRandomDirectionChange();
         HandlePlayerTargeting();
+
+        playerNearby = false;
     }
 
     private void HandleRandomDirectionChange()
@@ -41,7 +50,7 @@ public class björn : MonoBehaviour
 
         if (_changeDirectionCooldown <= 0)
         {
-            float angleChange = Random.Range(-90f, 90f);
+            float angleChange = Random.Range(-80f, 80f);
             Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
             _targetDirection = rotation * _targetDirection;
 
@@ -60,17 +69,28 @@ public class björn : MonoBehaviour
     private void RotateTowardsTarget()
     {
 
-
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, _targetDirection);
         Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _roatationSpeed * Time.deltaTime);
 
         _rigidbody.SetRotation(rotation);
+
+        playerNearby = true;
     }
 
 
     private void SetVelocity()
     {
-        _rigidbody.velocity = transform.up * _speed;
+        if (playerNearby == false)
+        {
+            _rigidbody.velocity = transform.up * _walkingSpeed;
+            animator.SetFloat("WolfWalk", 1);
+        }
+
+        if (playerNearby == true)
+        {
+            _rigidbody.velocity = transform.up * _runingSpeed;
+            animator.SetFloat("WolfWalk", 1);
+        }
     }
 
 }
