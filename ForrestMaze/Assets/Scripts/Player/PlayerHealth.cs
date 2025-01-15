@@ -11,9 +11,11 @@ public class PlayerHealth : MonoBehaviour
     bool enemyTag;
     bool armOut;
 
-    
+    bool isNearHealth = false;
+           
+        
 
-    public GameObject lives;
+public GameObject lives;
 
 
     // Start is called before the first frame update
@@ -32,7 +34,18 @@ public class PlayerHealth : MonoBehaviour
             GameOver();
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isNearHealth) 
+            {
+                if (currentHealth < 3)
+                {
+                    currentHealth += 1;
 
+                }
+            }
+
+        }
 
     }
 
@@ -46,16 +59,30 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //So you only take damage from enemys
-    private void OnCollisionEnter2D(Collision2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        
-        
+        if (collider.gameObject.CompareTag("Health pack") )
+        {
+            isNearHealth = true;
+           
+        }
+
+
         if (collider.gameObject.CompareTag("Enemy"))
         {
             
             currentHealth -= 1;
 
            // Destroy(lives.transform.GetChild(currentHealth).gameObject);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Health pack") )
+        {
+            isNearHealth = false;
 
         }
     }
