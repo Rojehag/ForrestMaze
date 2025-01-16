@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1185435752160964999}
   - component: {fileID: 1008088324318861133}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 301442559, guid: 939e62ebf48a2094ebcbfbf52c104692, type: 3}
+  m_Sprite: {fileID: -1677311246, guid: 50479a20efd9e974dbeb2a5b9d6cbfd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -200,16 +200,16 @@ PolygonCollider2D:
       - {x: 0.016967773, y: 0.96894914}
       - {x: -0.2623484, y: 0.83193445}
       - {x: -0.6651206, y: 0.7847034}
-      - {x: -0.75485325, y: -0.22554576}
+      - {x: -1.6934562, y: -0.26164532}
       - {x: -0.6811557, y: -0.6560583}
       - {x: -0.6718533, y: -0.6344404}
-      - {x: -0.589108, y: -1.0095694}
-      - {x: -0.18520665, y: -1.4876184}
-      - {x: 0.3120215, y: -1.3135765}
-      - {x: 0.47976017, y: -1.1174719}
-      - {x: 0.54896235, y: -0.93028545}
-      - {x: 0.6522145, y: -0.2850598}
-      - {x: 0.72059953, y: 0.41537488}
+      - {x: -0.48080766, y: 0.07343423}
+      - {x: -0.2574072, y: -0.18801355}
+      - {x: -0.30168056, y: -0.23057234}
+      - {x: -0.2422421, y: -0.25106966}
+      - {x: 0.54896235, y: -0.13608336}
+      - {x: 1.5908175, y: 0.0037406683}
+      - {x: 1.6231028, y: 0.5597755}
       - {x: 0.56877875, y: 1.410418}
       - {x: 0.23506713, y: 1.2385836}
   m_UseDelaunayMesh: 0
@@ -223,7 +223,7 @@ Animator:
   m_GameObject: {fileID: 9139570435942165851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c60bfad157a92a4b957a4e79c1284e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4ddedf62728a8a94ba9dccd87dd89e31, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

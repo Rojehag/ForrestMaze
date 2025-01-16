@@ -50,7 +50,7 @@ public class björn : MonoBehaviour
 
         if (_changeDirectionCooldown <= 0)
         {
-            float angleChange = Random.Range(-80f, 80f);
+            float angleChange = Random.Range(-90f, 90f);
             Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
             _targetDirection = rotation * _targetDirection;
 
