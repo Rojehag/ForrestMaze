@@ -12,10 +12,8 @@ public class PlayerHealth : MonoBehaviour
     bool armOut;
 
     bool isNearHealth = false;
-           
-        
 
-public GameObject lives;
+    public GameObject lives;
 
 
     // Start is called before the first frame update
@@ -47,15 +45,6 @@ public GameObject lives;
 
         }
 
-    }
-
-    //For health bar
-    public float remaningHealthProcentage
-    {
-        get
-        {
-            return currentHealth;
-        }
     }
 
     //So you only take damage from enemys
