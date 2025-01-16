@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - PlayerAttack
   - Health pack
+  - Log
+  - Axe
   layers:
   - Default
   - TransparentFX

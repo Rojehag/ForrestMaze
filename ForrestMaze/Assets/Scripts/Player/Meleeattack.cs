@@ -8,12 +8,12 @@ public class Meleeattack : MonoBehaviour
 
     public float time;
 
-    
-
     public float timeBetweenAttack;
     float timeLeftBetweenAttack;
 
     Animator animator;
+
+    
 
     // Start is called before the first frame update
     void Start()
