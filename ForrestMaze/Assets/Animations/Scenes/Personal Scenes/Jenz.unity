@@ -325,7 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemmyAttackArea: {fileID: 4970650325170761172, guid: 21e1f52ccb30e5e4eba8e5f5956fb7c9, type: 3}
   timeOfAttack: 0.5
-  enemyDamageDone: 0
 --- !u!61 &357246737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -713,10 +712,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 575679214673250511, guid: 4fb4ea696c7629942868411e114b8e11, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1465974687720363957, guid: 4fb4ea696c7629942868411e114b8e11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000000052154064
