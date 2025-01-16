@@ -38,8 +38,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (collider.gameObject.CompareTag("PlayerAttack"))
         {
-            
-            currentHealth -= 1;
+            if (Random.Range(0, 10) == 5)
+            {
+                currentHealth -= collider.gameObject.GetComponent<PlayerAttackArea>().damageAmount * 2;
+            }
+            else
+            {
+                currentHealth -= collider.gameObject.GetComponent<PlayerAttackArea>().damageAmount;
+            }
         }
     }
 
