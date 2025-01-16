@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
                 if (currentHealth < 3)
                 {
                     currentHealth += 1;
+                    lives.transform.GetChild(currentHealth - 1).gameObject.SetActive(true);
 
                 }
             }
@@ -60,9 +61,10 @@ public class PlayerHealth : MonoBehaviour
         if (collider.gameObject.CompareTag("Enemy"))
         {
             
-            currentHealth -= 1;
+            currentHealth -= collider.gameObject.GetComponent<PlayerAttackArea>().damageAmount;
 
-           // Destroy(lives.transform.GetChild(currentHealth).gameObject);
+            // Destory(lives.transform.GetChild(currentHealth).gameObject);
+            lives.transform.GetChild(currentHealth).gameObject.SetActive(false);
 
         }
     }
