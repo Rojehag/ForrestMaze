@@ -22,7 +22,10 @@ public class HealthPack : MonoBehaviour
         {
             if (playerNearby == true) 
             {
-                Destroy(healthPack, time);
+                if (GameObject.FindGameObjectWithTag("player").GetComponent<PlayerHealth>().currentHealth < 3)
+                {
+                    Destroy(healthPack, time);
+                }
             }
 
         }
