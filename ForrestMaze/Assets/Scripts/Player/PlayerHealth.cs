@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     float time = 0.5f;
     public float timeWhileblocking = 0.5f;
 
+    float timeBetweenBlock = 1.5f;
+    float timeLeftBetweenBlock = 0;
+
     bool enemyTag;
     bool armOut;
 
@@ -39,8 +42,12 @@ public class PlayerHealth : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            armOut = true;
-            timeWhileblocking = time;
+            if (Time.time >= timeLeftBetweenBlock)
+            {
+                timeLeftBetweenBlock = Time.time + timeBetweenBlock;
+                armOut = true;
+                timeWhileblocking = time;
+            }
         }
         else if (timeWhileblocking <= 0)
         {
