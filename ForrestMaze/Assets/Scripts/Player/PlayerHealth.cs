@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    float time = 0.5f;
+    public float timeWhileblocking = 0.5f;
+
     bool enemyTag;
     bool armOut;
 
@@ -27,9 +30,24 @@ public class PlayerHealth : MonoBehaviour
     //So you can die
     void Update()
     {
+        timeWhileblocking -= Time.deltaTime;
+
         if (currentHealth <= 0)
         {
             GameOver();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            armOut = true;
+            timeWhileblocking = time;
+        }
+        else if (timeWhileblocking <= 0)
+        {
+
+            armOut = false;
+
+
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -57,15 +75,17 @@ public class PlayerHealth : MonoBehaviour
            
         }
 
-
-        if (collider.gameObject.CompareTag("Enemy"))
+        if (armOut == false)
         {
-            
-            currentHealth -= collider.gameObject.GetComponent<PlayerAttackArea>().damageAmount;
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
 
-            // Destory(lives.transform.GetChild(currentHealth).gameObject);
-            lives.transform.GetChild(currentHealth).gameObject.SetActive(false);
+                currentHealth -= collider.gameObject.GetComponent<PlayerAttackArea>().damageAmount;
 
+                // Destory(lives.transform.GetChild(currentHealth).gameObject);
+                lives.transform.GetChild(currentHealth).gameObject.SetActive(false);
+
+            }
         }
     }
 
