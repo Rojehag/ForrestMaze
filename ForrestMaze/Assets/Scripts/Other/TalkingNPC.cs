@@ -83,6 +83,8 @@ public class TalkingNPC : MonoBehaviour
         if (other.CompareTag("player"))
         {
             playerIsClose = false;
+
+            dialoguePanel.SetActive(false);
         }
     }
 }
