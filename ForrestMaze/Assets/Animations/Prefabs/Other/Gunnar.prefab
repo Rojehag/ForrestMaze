@@ -136,7 +136,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueLines:
-  - What are you doing alone in this forest kid? Young People like you should stay
-    in the cities. This forest is big, hope you find your way out. Or else come back
-    and talk with me, it's boring in this forest.
+  - '      What are you doing alone in this forest kid? Young People like you should
+    stay in the cities. This forest is big, hope you find your way out. Or else come
+    back and talk with me, it''s boring in this forest.'
   continueButton: {fileID: 0}
