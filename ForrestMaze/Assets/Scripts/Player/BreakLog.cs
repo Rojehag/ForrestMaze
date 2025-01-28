@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BreakLog : MonoBehaviour
 {
+
+    public GameObject textPopup;
     bool playerNearby = false;
 
     public int logHealth = 3;
@@ -39,6 +41,8 @@ public class BreakLog : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             playerNearby = true;
+
+            textPopup.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -46,6 +50,8 @@ public class BreakLog : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             playerNearby = false;
+
+            textPopup.SetActive(false);
         }
     }
     void HitLog()

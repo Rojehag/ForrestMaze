@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
+   public GameObject textpopup;
     bool playerNearby = false;
     public GameObject healthPack;
 
@@ -36,6 +37,8 @@ public class HealthPack : MonoBehaviour
         if (collision.CompareTag("player"))
         {
             playerNearby = true;
+
+            textpopup.SetActive(true);
         }
     }
 
@@ -44,6 +47,9 @@ public class HealthPack : MonoBehaviour
         if (collision.CompareTag("player"))
         {
             playerNearby = false;
+
+            textpopup.SetActive(false);
+
         }
     }
 }
