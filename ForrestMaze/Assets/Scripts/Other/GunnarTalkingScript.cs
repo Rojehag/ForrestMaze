@@ -14,6 +14,7 @@ public class GunnarTalkingScript : MonoBehaviour
     public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool playerIsFarAway;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,8 @@ public class GunnarTalkingScript : MonoBehaviour
         {
             continueButton.SetActive(true);
         }
+
+        //if(playerIsFarAway)
     }
 
     public void zeroText()

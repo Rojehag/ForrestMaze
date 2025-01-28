@@ -11,10 +11,12 @@ public class EnemyAttack : MonoBehaviour
 
     bool enemyNearby = false;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,8 @@ public class EnemyAttack : MonoBehaviour
                 enemyTimeLeftBetweenAttack = Time.time + enemyTimeBetweenAttack;
                 EnemyAttacking();
             }
+
+            animator.SetFloat("ZombieHit", 0);
         }  
     }
     
@@ -54,6 +58,8 @@ public class EnemyAttack : MonoBehaviour
     {
         GameObject enemyAttack = Instantiate(enemmyAttackArea, transform.position + transform.up, Quaternion.Euler(0, 0, 0));
         Rigidbody2D enemnyRigidbody = enemyAttack.GetComponent<Rigidbody2D>();
+
+        animator.SetFloat("ZombieHit", 1);
 
         Destroy(enemyAttack, timeOfAttack);
     }
