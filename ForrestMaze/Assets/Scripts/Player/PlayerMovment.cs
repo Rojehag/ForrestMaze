@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovment : MonoBehaviour
 {
+    
     
     Rigidbody2D rigidbody;
 
@@ -58,6 +60,13 @@ public class PlayerMovment : MonoBehaviour
         else
         {
             animator.SetFloat("Run", 0f);
+        }
+
+
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            SceneManager.LoadScene(4);
         }
     }
 }
