@@ -30,7 +30,7 @@ public class EnemyAttack : MonoBehaviour
                 EnemyAttacking();
             }
 
-            animator.SetFloat("ZombieHit", 0);
+           
         }  
     }
     
@@ -59,7 +59,7 @@ public class EnemyAttack : MonoBehaviour
         GameObject enemyAttack = Instantiate(enemmyAttackArea, transform.position + transform.up, Quaternion.Euler(0, 0, 0));
         Rigidbody2D enemnyRigidbody = enemyAttack.GetComponent<Rigidbody2D>();
 
-        animator.SetFloat("ZombieHit", 1);
+        animator.Play("ZombieHit");
 
         Destroy(enemyAttack, timeOfAttack);
     }
