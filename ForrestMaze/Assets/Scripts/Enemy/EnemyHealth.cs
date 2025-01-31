@@ -11,13 +11,13 @@ public class EnemyHealth : MonoBehaviour
     bool playerTag;
 
     public GameObject enemy;
-
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = currentHealth;
-
+        animator = GetComponent<Animator>();
 
 
     }
@@ -27,7 +27,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Destroy(enemy);
+            animator.Play("EnemyDie");
+            
+            Destroy(enemy, 0.7f);
+
         }
     }
 
