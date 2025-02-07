@@ -14,6 +14,11 @@ public class GameOverManager : MonoBehaviour
         // Load the main menu scene
         SceneManager.LoadScene(0);
     }
+    public void LoadControllScene()
+    {
+        // Load the main menu scene
+        SceneManager.LoadScene(4);
+    }
 
     public void QuitGame()
     {
